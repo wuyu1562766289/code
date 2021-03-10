@@ -5,6 +5,7 @@
     <reft></reft>
     <reactivet></reactivet>
     <computed @submit="handle"></computed>
+    <life></life>
   </div>
 </template>
 
@@ -14,6 +15,7 @@
 import reft from '@/components/reft.vue'
 import reactivet from '@/components/reactivet'
 import computed from '@/components/computed'
+import life from '@/components/life'
 
 export default {
   name: 'Home',
@@ -21,7 +23,8 @@ export default {
     // HelloWorld,
     reft,
     reactivet,
-    computed
+    computed,
+    life
   },
   setup () {
     const handle = (value) => {
