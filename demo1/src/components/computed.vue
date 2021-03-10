@@ -4,9 +4,9 @@
     <!-- <input v-model="num1" />+ <input v-model="num2" />=
     {{ result }} -->
 
-    <input v-model="state.num1" @keyup="addNum" />+
-    <input v-model="state.num2" @keyup="addNum" />=
+    <input v-model="state.num1" />+ <input v-model="state.num2" />=
     {{ state.result }}
+    <button @click="handle">click</button>
   </div>
 </template>
 
@@ -15,7 +15,7 @@ import { reactive, computed } from 'vue'
 
 export default {
   name: 'HelloWorld',
-  setup () {
+  setup (props, { emit }) {
     // const num1 = ref(0)
     // const num2 = ref(0)
     // const result = computed(() => {
@@ -35,8 +35,14 @@ export default {
         return parseInt(state.num1) + parseInt(state.num2)
       })
     })
+
+    const handle = () => {
+      console.log('click comit')
+      emit('submit', `传递数据啊${state.result}`)
+    }
     return {
-      state
+      state,
+      handle
     }
   }
 }

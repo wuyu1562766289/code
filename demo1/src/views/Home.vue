@@ -4,7 +4,7 @@
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
     <reft></reft>
     <reactivet></reactivet>
-    <computed></computed>
+    <computed @submit="handle"></computed>
   </div>
 </template>
 
@@ -22,6 +22,12 @@ export default {
     reft,
     reactivet,
     computed
+  },
+  setup () {
+    const handle = (value) => {
+      console.log(value)
+    }
+    return { handle }
   }
 }
 </script>
