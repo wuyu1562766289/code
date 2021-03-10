@@ -16,6 +16,6 @@ export default {
     onClick () {
       alert(this.msg)
     }
-  },
+  }
 }
 </script>
