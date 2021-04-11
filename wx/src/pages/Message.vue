@@ -98,7 +98,7 @@ export default defineComponent({
         cancelText: '取消',
         okText: '确认',
         onOk() {
-          msgList.value.push({
+          msgList.push({
             content: '评价',
             type: true
           })
@@ -130,7 +130,7 @@ export default defineComponent({
       if (!msgInput.value) {
         return
       }
-      msgList.value.push({
+      msgList.push({
         content: msgInput.value,
         type: true
       })
@@ -145,7 +145,7 @@ export default defineComponent({
 
     onMounted (() => {
       for (let i = 0; i < 20; i++) {
-        msgList.value.push({
+        msgList.push({
           content: 'hello world啥建档立卡费劲啊啥都离开飞机啊算了阿斯顿发记录卡世纪东方阿斯顿发撒旦法师的sadGV重新发VG回答是发给梵蒂冈--' + i,
           type: i % 2 === 0
         })
@@ -177,6 +177,7 @@ export default defineComponent({
     flex-direction: column;
     justify-content: space-around;
     position: relative;
+    overflow: hidden;
   }
   /* .header {
     display: flex;
