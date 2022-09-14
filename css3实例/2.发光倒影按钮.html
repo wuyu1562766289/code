@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>发光倒影按钮</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    html,body{
+      width: 100%;
+      height: 100%;
+    }
+    body {
+      background-color: #050801;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    a {
+      position: relative;
+      display: inline-block;
+      padding: 25px 30px;
+      margin: 40px 0;
+      color: #03e9f4;
+      /* 取消下划线 */
+      text-decoration: none;
+      /* 文字大写 */
+      text-transform: uppercase;
+      transition: .5s;
+      /* 字符间距 */
+      letter-spacing: 4px;
+      overflow: hidden;
+      /* 向下显示倒影 */
+      -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+    }
+    a span {
+      position: absolute;
+    }
+    a span:nth-child(1) {
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #03e9f4);
+      animation: animationSpan1 1s linear infinite;
+    }
+    @keyframes animationSpan1 {
+      0% {
+        left: -100%;
+      }
+      50%,100% {
+        left: 100%;
+      }
+    }
+    a span:nth-child(2) {
+      top: -100%;
+      right: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg, transparent, #03e9f4);
+      animation: animationSpan2 1s linear infinite;
+      animation-delay: .25s;
+    }
+    @keyframes animationSpan2 {
+      0% {
+        top: -100%;
+      }
+      50%,100% {
+        top: 100%;
+      }
+    }
+    a span:nth-child(3) {
+      bottom: 0;
+      right: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(270deg, transparent, #03e9f4);
+      animation: animationSpan3 1s linear infinite;
+      animation-delay: .5s;
+    }
+    @keyframes animationSpan3 {
+      0% {
+        right: -100%;
+      }
+      50%,100% {
+        right: 100%;
+      }
+    }
+    a span:nth-child(4) {
+      top: 100%;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(360deg, transparent, #03e9f4);
+      animation: animationSpan4 1s linear infinite;
+      animation-delay: .75s;
+    }
+    @keyframes animationSpan4 {
+      0% {
+        top: 100%;
+      }
+      50%,100% {
+        top: -100%;
+      }
+    }
+    a:hover {
+      background-color: #03e9f4;
+      color: #050801;
+      box-shadow: 0 0 5px #03e9f4,
+                  0 0 25px #03e9f4,
+                  0 0 50px #03e9f4,
+                  0 0 200px #03e9f4,
+                  0 0 400px #03e9f4,
+                  0 0 700px #03e9f4,
+                  0 0 1000px #03e9f4;
+    }
+    /* 通过滤镜设置颜色 */
+    a:nth-child(2) {
+      filter: hue-rotate(290deg);
+    }
+    a:nth-child(3) {
+      filter: hue-rotate(110deg);
+    }
+  </style>
+</head>
+<body>
+  <a href="javascript:;">
+    wangxing hello
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </a>
+  <a href="javascript:;">
+    wangxing hello
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </a>
+  <a href="javascript:;">
+    wangxing hello
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </a>
+</body>
+</html>
